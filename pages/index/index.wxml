@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="content">
+    首页
+  </view>
+  <view class="bottom" wx:if="{{!token}}">
+    <view>
+      <view class="login_tip">您还没有登录哦</view>
+      <view class="login_tip">登录后可享受更多精彩服务</view>
+    </view>
+    <navigator class="login_btn" url="/pages/login/login">
+      立即登录
+    </navigator>
+  </view>
+</view>
+  

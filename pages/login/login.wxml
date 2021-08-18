@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="name">
+    <open-data type="userNickName"></open-data>  
+  </view>
+  <text class="tip_text">
+    为了您更好的体验小程序，请您进行授权
+  </text>
+  <text class="tip_text_blue" wx:if="{{isLogin}}">
+    您近期已经授权过了,正在为您跳转
+  </text>
+
+  <view wx:if="{{!isLogin && !isShow}}">
+    <button
+      class="btn_login"
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      >
+      授权登录
+    </button>
+    <button
+      class="btn_login"
+      bindtap="onCancelLogin"
+      >
+      取消授权
+    </button>
+  </view>
+
+  <view class="mask" wx:if="{{isShow}}">
+  </view> 
+  <view class="pop_box" wx:if="{{isShow}}">
+    <view class="pop_tip">
+      您还没有绑定手机号,请绑定手机号
+    </view>
+    <button
+      class="pop_btn"
+      open-type="getPhoneNumber"
+      bindgetphonenumber="onBindPhone"
+      >
+      点击绑定
+    </button>
+  </view>
+
+</view>
+  

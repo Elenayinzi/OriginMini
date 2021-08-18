@@ -1,0 +1,23 @@
+  <view class="account">
+    <view class="item">
+      <view class="mobile_item">
+        <view class="mobile">{{mobile}}</view>
+        <button
+          class="check_btn"
+          bindtap="getCheckCode"
+          >
+          发送验证码
+        </button>
+      </view>
+      <view class="line"></view>
+      <view class="code_input">
+        <input bindinput="changeInput" placeholder="请输入验证码"/>
+      </view>
+    </view>
+    <button
+      class="btn_unbind"
+      bindtap="unbindUserInfo"
+      >
+      确认解绑
+    </button> 
+</view>

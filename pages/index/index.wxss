@@ -1,0 +1,40 @@
+page{
+    height: 100%;
+    width: 100%;
+}
+.content{
+    text-align: center;
+    padding-top: 20rpx;
+}
+.bottom{
+    width: 690rpx;
+    height: 162rpx;
+    background: linear-gradient(270deg, #20ADFF 0%, #71B8FF 100%);
+    border-radius: 20px 20px 0px 0px;
+    margin-left: 30rpx;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.login_tip{
+    font-size: 30rpx;
+    color: #fff;
+    line-height: 20rpx;
+    margin-top: 40rpx;
+    margin-left: 50rpx;
+}
+.login_btn{
+    width: 202rpx;
+    height: 80rpx;
+    background: linear-gradient(90deg, #2E82FF 0%, #61A1FF 100%);
+    border-radius: 44rpx;
+    color: #fff;
+    font-size: 30rpx;
+    margin-top: 40rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+button::after{
+    border: none;
+}
