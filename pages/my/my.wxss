@@ -2,7 +2,56 @@ page{
 	background: #FBFBFB;
 }
 .account{
-    padding: 0 24rpx;
+    margin: 24rpx 30rpx 30rpx;
+}
+.my_info{
+    width: 690rpx;
+    height: 332rpx;
+    background: linear-gradient(90deg,#1C88F0 0%,#1C61EF 100%);
+    border-radius: 10rpx;
+}
+.box_item{
+    width: 686rpx;
+    height: 214rpx;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 32rpx;
+}
+.box_title{
+    padding: 24rpx 0rpx 0rpx 24rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+.list_item{
+    padding: 0rpx 24rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.item{
+    text-align: center;
+}
+.box_icon{
+    width: 48rpx;
+    height: 48rpx;
+}
+.icon_text{
+    font-size: 24rpx;
+    color: #666;
+}
+.user_info{
+    display: flex;
+    align-items: center;
+}
+.avatar{
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid red;
+}
+.name{
+    color: #fff;
+    font-size: 34rpx;
 }
 .item{
     background: #fff;

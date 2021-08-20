@@ -1,4 +1,68 @@
   <view class="account">
+    <view class="my_info">
+      <view class="user_info">
+        <view class="avatar">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="name">
+          <open-data type="userNickName"></open-data>  
+        </view>
+      </view>
+      
+    </view>
+    <view class="box_item">
+      <view class="box_title">常用工具</view>
+      <view class="list_item">
+        <view class="item">
+          <image class="box_icon" src="../../assets/car.png"/> 
+          <view class="icon_text">车辆管理</view>
+        </view>
+        <view class="item">
+          <image class="box_icon" src="../../assets/address.png"/> 
+          <view class="icon_text">地址管理</view>
+        </view>
+        <view class="item">
+          <image class="box_icon" src="../../assets/account.png"/> 
+          <view class="icon_text">账号管理</view>
+        </view>
+      </view>
+    </view>
+    <view class="box_item">
+      <view class="box_title">我的订单</view>
+      <view class="list_item">
+        <view class="item">
+          <image class="box_icon" src="../../assets/maintainIcon.png"/> 
+          <view class="icon_text">保养订单</view>
+        </view>
+        <view class="item">
+          <image class="box_icon" src="../../assets/mallIcon.png"/> 
+          <view class="icon_text">商城订单</view>
+        </view>
+        <view class="item">
+          <image class="box_icon" src="../../assets/washIcon.png"/> 
+          <view class="icon_text">自动洗车订单</view>
+        </view>
+      </view>
+    </view>
+    <view class="box_item">
+      <view class="box_title">汽运服务</view>
+      <view class="list_item">
+        <view class="item">
+          <image class="box_icon" src="../../assets/carCheck.png"/> 
+          <view class="icon_text">汽车年检</view>
+        </view>
+        <view class="item">
+          <image class="box_icon" src="../../assets/ticket.png"/> 
+          <view class="icon_text">汽车票</view>
+        </view>
+        <view class="item">
+          <image class="box_icon" src="../../assets/life.png"/> 
+          <view class="icon_text">汽运生活</view>
+        </view>
+      </view>
+    </view>
+      
+    <!--
     <view class="item">
       <view class="mobile_item">
         <view class="mobile">{{mobile}}</view>
@@ -19,5 +83,5 @@
       bindtap="unbindUserInfo"
       >
       确认解绑
-    </button> 
+    </button>-->
 </view>

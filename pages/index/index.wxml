@@ -1,6 +1,5 @@
 <view class="container">
   <view class="content">
-    首页
   </view>
   <view class="bottom" wx:if="{{!token}}">
     <view>
