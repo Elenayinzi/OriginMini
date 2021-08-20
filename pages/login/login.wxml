@@ -12,7 +12,7 @@
     您近期已经授权过了,正在为您跳转
   </text>
 
-  <view wx:if="{{!isLogin && !isShow}}">
+  <block wx:if="{{!isLogin && !isShow}}">
     <button
       class="btn_login"
       open-type="getUserInfo" 
@@ -26,7 +26,7 @@
       >
       取消授权
     </button>
-  </view>
+  </block>
 
   <view class="mask" wx:if="{{isShow}}">
   </view> 
