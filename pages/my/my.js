@@ -105,8 +105,6 @@ Page({
         'X-Request-Token': wx.getStorageSync('token')
       },
       success(res){
-        console.log(111)
-        console.log(res)
         if(res.data == 'success'){
           wx.showToast({
             title: '解绑成功！',
