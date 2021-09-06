@@ -7,8 +7,25 @@
         <view class="name">
           <open-data type="userNickName"></open-data>  
         </view>
+        <button class="kefu" open-type="contact">
+          <image class="kefu_icon" src="../../assets/kefu.png"/> 
+          <text>客服</text>
+        </button>
       </view>
-      
+      <view class="info_item">
+        <view class="item_inner">
+          <view>¥180.00</view>
+          <view class="item_value">钱包</view>
+        </view>
+        <view class="item_inner">
+          <view>3</view>
+          <view class="item_value">优惠券</view>
+        </view>
+        <view class="item_inner">
+          <view>2</view>
+          <view class="item_value">洗车券</view>
+        </view>
+      </view>
     </view>
     <view class="box_item">
       <view class="box_title">常用工具</view>
@@ -21,10 +38,10 @@
           <image class="box_icon" src="../../assets/address.png"/> 
           <view class="icon_text">地址管理</view>
         </view>
-        <view class="item">
+        <navigator class="item" url="/pages/account/account" hover-class="none">
           <image class="box_icon" src="../../assets/account.png"/> 
           <view class="icon_text">账号管理</view>
-        </view>
+        </navigator>
       </view>
     </view>
     <view class="box_item">
@@ -61,27 +78,4 @@
         </view>
       </view>
     </view>
-      
-    <!--
-    <view class="item">
-      <view class="mobile_item">
-        <view class="mobile">{{mobile}}</view>
-        <button
-          class="check_btn"
-          bindtap="getCheckCode"
-          >
-          发送验证码
-        </button>
-      </view>
-      <view class="line"></view>
-      <view class="code_input">
-        <input bindinput="changeInput" placeholder="请输入验证码"/>
-      </view>
-    </view>
-    <button
-      class="btn_unbind"
-      bindtap="unbindUserInfo"
-      >
-      确认解绑
-    </button>-->
 </view>

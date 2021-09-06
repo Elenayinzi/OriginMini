@@ -9,6 +9,7 @@ page{
     height: 332rpx;
     background: linear-gradient(90deg,#1C88F0 0%,#1C61EF 100%);
     border-radius: 10rpx;
+
 }
 .box_item{
     width: 686rpx;
@@ -18,7 +19,7 @@ page{
     margin-top: 32rpx;
 }
 .box_title{
-    padding: 24rpx 0rpx 0rpx 24rpx;
+    padding: 24rpx 0rpx 15rpx 24rpx;
     font-size: 32rpx;
     color: #333;
 }
@@ -40,62 +41,65 @@ page{
 }
 .user_info{
     display: flex;
-    align-items: center;
+    padding-left: 28rpx;
 }
 .avatar{
     width: 130rpx;
     height: 130rpx;
     border-radius: 50%;
     overflow: hidden;
-    border: 1px solid red;
+    margin-top: 40rpx;
 }
 .name{
-    color: #fff;
+    color: #333;
     font-size: 34rpx;
+    margin-left: 30rpx;
+    margin-top: 85rpx;
 }
-.item{
-    background: #fff;
-    margin-top: 30rpx;
-}
-.mobile_item{
+.kefu{
     display: flex;
+    width: 110rpx;
+    height: 52rpx;
+    background: #3C7BFC;
+    border-radius: 200rpx 0rpx 0rpx 200rpx;
+    position: absolute;
+    right: 35rpx;
+    color: #FFFFFF;
+    font-size: 20rpx;
+    top: 80rpx;
+    justify-content: center;
     align-items: center;
-    padding: 24rpx 0rpx;
-    justify-content: space-around;
 }
-.mobile{
-    font-size: 36rpx;
-    padding-left: 24rpx;
+.kefu_icon{
+    width: 32rpx;
+    height: 34rpx;
+    margin-right: 10rpx;
 }
-.check_btn{
-    height: 72rpx;
-    border: 1rpx solid #3C7BFC;
-    line-height: 72rpx;
-    font-size: 28rpx;
-    color: #3C7BFC;
-    border-radius: 50rpx;
-}
-.line{
-    height: 1rpx;
-    background: #ccc;
-    margin-left: 24rpx;
-    margin-right: 24rpx;
-}
-.code_input{
-    height: 100rpx;
+.info_item{
     display: flex;
-    align-items: center;
-    padding-left: 24rpx;
-    font-size: 30rpx;
-}
-.btn_unbind{
-    background: linear-gradient(90deg, rgba(24, 151, 255, 1) 0%, rgba(7, 108, 255, 1) 100%);
-    border-radius: 44rpx;
-    font-size: 30rpx;
-    font-weight: bold;
+    padding-left: 28rpx;
+    padding-right: 28rpx;
     color: #fff;
-    margin-top: 54rpx;
-    width: 600rpx;
-    height: 90rpx;
-    line-height: 90rpx;
+    margin-top: 36rpx;
+    justify-content: space-between;
+}
+.item_inner{
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: bold;
+}
+.item_value{
+    font-size: 28rpx;
+    color: #D5D5D5;
+    font-weight: 400;
+}
+button::after{
+    border:none;
+}
+button{
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    line-height: inherit;
+    border-radius: 0;
 }
