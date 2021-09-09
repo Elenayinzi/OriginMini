@@ -14,15 +14,15 @@
       </view>
       <view class="info_item">
         <view class="item_inner">
-          <view>¥180.00</view>
+          <view>¥{{wallet}}</view>
           <view class="item_value">钱包</view>
         </view>
         <view class="item_inner">
-          <view>3</view>
+          <view>{{mallCoupons}}</view>
           <view class="item_value">优惠券</view>
         </view>
         <view class="item_inner">
-          <view>2</view>
+          <view>{{carCoupons}}</view>
           <view class="item_value">洗车券</view>
         </view>
       </view>
@@ -64,18 +64,18 @@
     <view class="box_item">
       <view class="box_title">汽运服务</view>
       <view class="list_item">
-        <view class="item">
+        <navigator class="item" target="miniProgram" appId="wxac36e8bbe7126acd" path="pages/index/index" hover-class="none">
           <image class="box_icon" src="../../assets/carCheck.png"/> 
-          <view class="icon_text">汽车年检</view>
-        </view>
-        <view class="item">
+          <view class="icon_text">鹅城学车</view>
+        </navigator>
+        <navigator class="item" target="miniProgram" appId="wx9d798e406cd624ea" path="pages/index/index" hover-class="none">
           <image class="box_icon" src="../../assets/ticket.png"/> 
           <view class="icon_text">汽车票</view>
-        </view>
-        <view class="item">
+        </navigator>
+        <navigator class="item" target="miniProgram" appId="wx9e5b8bcec24cf591" path="pages/index/index" hover-class="none">
           <image class="box_icon" src="../../assets/life.png"/> 
           <view class="icon_text">汽运生活</view>
-        </view>
+        </navigator>
       </view>
     </view>
 </view>

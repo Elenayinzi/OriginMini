@@ -15,7 +15,20 @@ Page({
   onLoad: function (options) {
     
   },
-  
+  onTap(event) {
+    console.log(event)
+    //跳转到下个页面，不关闭当前页面，可以返回上个页面
+    wx.navigateTo({
+      url: '/pages/account/account',
+    })
+  },
+  onTap2(event) {
+    console.log(event)
+    //跳转到下个页面，关闭当前页面，不能返回上个页面
+    wx.redirectTo({
+      url: '/pages/account/account',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

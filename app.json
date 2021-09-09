@@ -8,11 +8,14 @@
   "sitemapLocation": "sitemap.json",
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小程序"
   },
   "tabBar": {
     "color": "#686F75",
     "selectedColor": "#0086F6",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -27,5 +30,11 @@
         "selectedIconPath": "./assets/my_active.png"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
   }
 }

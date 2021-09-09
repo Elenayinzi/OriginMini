@@ -6,7 +6,10 @@ Page({
       mobile: wx.getStorageSync('user_info')?wx.getStorageSync('user_info').mobile:'',
       checkCode: '',
       openId: '',
-      unionId: ''
+      unionId: '',
+      isDisabled: false,
+      message: '发送验证码',
+      time: 60
     },
     /**
      * 生命周期函数--监听页面加载
@@ -21,24 +24,24 @@ Page({
           url: 'https://sso.hzqykeji.com/bind',
           method: 'GET',
           header: {
-              'content-type': 'application/json;charset=UTF-8',
-              'Authorization':'23dd69d17487bf8adf54b2fbbe9ed573',
-              'X-Request-Token': wx.getStorageSync('token')
+            'content-type': 'application/json;charset=UTF-8',
+            'Authorization':'23dd69d17487bf8adf54b2fbbe9ed573',
+            'X-Request-Token': wx.getStorageSync('token')
           },
           success(res){
-              if(res.statusCode == 200){
-                let data = res.data
-                data.map(item=>{
-                  if(item.type == 74){
-                      _this.setData({
-                          openId:item.accessToken,
-                          unionId:item.identifier
-                      })
-                  }
-                })
-              }else{
-  
-              }
+            if(res.statusCode == 200){
+              let data = res.data
+              data.map(item=>{
+                if(item.type == 74){
+                    _this.setData({
+                      openId:item.accessToken,
+                      unionId:item.identifier
+                    })
+                }
+              })
+            }else{
+
+            }
           },
           fail(e){
   
@@ -47,12 +50,13 @@ Page({
     },
     //获取验证码
     getCheckCode(){
-      const { mobile } = this.data
+      let { mobile, time } = this.data
       const param = {
         phone: mobile,
         type:'unbind',
         token: wx.getStorageSync('token')
       }
+      let _this = this
       wx.request({
           url: `https://sso.hzqykeji.com/captcha/${mobile}`,
           data: param,
@@ -66,11 +70,26 @@ Page({
             wx.showToast({
               title:res.data
             })
+            _this.setData({
+              isDisabled: true
+            })
           },
-          fail(e){
-  
-          }
+          fail(e){}
       })
+      let timer = setInterval(()=>{
+        time--
+        if(time <= 0) {
+          this.setData({
+            isDisabled: false,
+            time: 60
+          })
+          clearInterval(timer)
+        }else{
+          this.setData({
+            time: time
+          })
+        }
+      }, 1000)
     },
     //验证码输入
     changeInput(e) {
@@ -82,18 +101,19 @@ Page({
     unbindUserInfo() {
       const { checkCode, mobile, openId, unionId } = this.data
       if(!checkCode) {
-              wx.showToast({
+        wx.showToast({
           title:'请先获取验证码！',
           icon: 'none'
         })
-              return
-          }
+        return
+      }
       let param = {
-              mobile,
-              identifier: unionId,
-              accessToken: openId,
-              captcha: checkCode
-          }
+        mobile,
+        identifier: unionId,
+        accessToken: openId,
+        captcha: checkCode
+      }
+      console.log(param)
       wx.request({
         url: 'https://sso.hzqykeji.com/unbind/mobile',
         data: param,
@@ -121,10 +141,9 @@ Page({
             })
           }
         },
-        fail(e){
-  
-        }
-    })
+        fail(e){}
+      })
+
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

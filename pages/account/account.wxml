@@ -4,8 +4,9 @@
         <button
             class="check_btn"
             bindtap="getCheckCode"
+            disabled="{{isDisabled}}"
             >
-            发送验证码
+            {{isDisabled?time+'秒后重新发送':'发送验证码'}}
         </button>
     </view>
     <view class="line"></view>
@@ -22,5 +23,9 @@
 </button>
 <view class="tips">
     <view class="tips_icon"></view>
-    <text>温馨提示：手机号码修改成功后需要使用新的手机号码进行登录</text>
+    <view class="tips_text">
+        <view>温馨提示：手机号码修改成功后需要使用新的手机号</view>
+        <view>码进行登录</view>
+    </view>
+    
 </view>

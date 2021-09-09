@@ -4,10 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mobile: wx.getStorageSync('user_info')?wx.getStorageSync('user_info').mobile:'',
-    checkCode: '',
-    openId: '',
-    unionId: ''
+    wallet: '180.00',
+    mallCoupons: 3,
+    carCoupons: 2
   },
   /**
    * 生命周期函数--监听页面加载
@@ -45,87 +44,6 @@ Page({
 
         }
     })
-  },
-  //获取验证码
-  getCheckCode(){
-    const { mobile } = this.data
-    const param = {
-      phone: mobile,
-      type:'unbind',
-      token: wx.getStorageSync('token')
-    }
-    wx.request({
-        url: `https://sso.hzqykeji.com/captcha/${mobile}`,
-        data: param,
-        method: 'GET',
-        header: {
-          'content-type': 'application/json;charset=UTF-8',
-          'Authorization':'23dd69d17487bf8adf54b2fbbe9ed573',
-          'X-Request-Token': wx.getStorageSync('token')
-        },
-        success(res){
-          wx.showToast({
-            title:res.data
-          })
-        },
-        fail(e){
-
-        }
-    })
-  },
-  //验证码输入
-  changeInput(e) {
-    this.setData({
-      checkCode: e.detail.value
-    })
-  },
-  //解绑
-  unbindUserInfo() {
-    const { checkCode, mobile, openId, unionId } = this.data
-    if(!checkCode) {
-			wx.showToast({
-        title:'请先获取验证码！',
-        icon: 'none'
-      })
-			return
-		}
-    let param = {
-			mobile,
-			identifier: unionId,
-			accessToken: openId,
-			captcha: checkCode
-		}
-    wx.request({
-      url: 'https://sso.hzqykeji.com/unbind/mobile',
-      data: param,
-      method: 'POST',
-      header: {
-        'content-type': 'application/json;charset=UTF-8',
-        'Authorization':'23dd69d17487bf8adf54b2fbbe9ed573',
-        'X-Request-Token': wx.getStorageSync('token')
-      },
-      success(res){
-        if(res.data == 'success'){
-          wx.showToast({
-            title: '解绑成功！',
-            icon: 'success'
-          })
-          wx.setStorageSync('token','')
-          wx.setStorageSync('user_info','')
-          wx.reLaunch({
-            url:'/pages/index/index'
-          })
-        }else{
-          wx.showToast({
-            title: '解绑失败！',
-            icon: 'error'
-          })
-        }
-      },
-      fail(e){
-
-      }
-  })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

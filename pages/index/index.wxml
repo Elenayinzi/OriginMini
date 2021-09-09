@@ -1,5 +1,31 @@
 <view class="container">
   <view class="content">
+    <view class="menu_box">
+      <view class="menu_item" bindtap="onTap" id="view" data-info="aaaaa">
+        <image class="menu_icon" src="../../assets/maintain.png" catchtap="onTap2" id="image" data-info="aaa"/> 
+        <view class="menu_text">保养预约</view>
+      </view>
+      <view class="menu_item">
+        <image class="menu_icon" src="../../assets/meirong.png"/> 
+        <view class="menu_text">美容洗车</view>
+      </view>
+      <view class="menu_item">
+        <image class="menu_icon" src="../../assets/playCar.png"/> 
+        <view class="menu_text">玩车</view>
+      </view>
+      <view class="menu_item">
+        <image class="menu_icon" src="../../assets/quality.png"/> 
+        <view class="menu_text">精品</view>
+      </view>
+    </view>
+    <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" indicator-color="rgba(1, 1, 1, .3)">
+      <swiper-item>
+        <image src="../../assets/tmp.png"/> 
+      </swiper-item> 
+      <swiper-item>
+        <image src="../../assets/tmp.png"/> 
+      </swiper-item> 
+    </swiper>
   </view>
   <view class="bottom" wx:if="{{!token}}">
     <view>

@@ -18,14 +18,14 @@ page{
     padding-left: 24rpx;
 }
 .check_btn{
-    width: 194rpx;
+    width: 230rpx;
     height: 72rpx;
     border: 1rpx solid #3C7BFC;
     line-height: 72rpx;
     font-size: 28rpx;
     color: #3C7BFC;
     border-radius: 50rpx;
-    margin-left: 220rpx;
+    margin-left: 190rpx;
 }
 .line{
     height: 1rpx;
@@ -64,10 +64,6 @@ button{
 .tips{
     display: flex;
     align-items: center;
-    color: #666;
-    font-size: 28rpx;
-    padding-left: 56rpx;
-    padding-right: 56rpx;
     margin-top: 30rpx;
 }
 .tips_icon{
@@ -76,4 +72,9 @@ button{
     background-color: #3C7BFC;
     border-radius: 50%;
     margin-right: 20rpx;
+    margin-left: 56rpx;
+}
+.tips_text{
+    color: #666;
+    font-size: 28rpx;
 }
