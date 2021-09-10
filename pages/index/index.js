@@ -4,22 +4,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    avatarUrl:"",
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    token: wx.getStorageSync('token')
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
+    token: wx.getStorageSync('token'),
+    lesson: [
+      {
+        id: 1,
+        image:"../../assets/tmp.png"
+      },
+      {
+        id: 2,
+        image:"../../assets/tmp.png"
+      },
+      {
+        id: 3,
+        image:"../../assets/tmp.png"
+      }
+    ],
+    str:["../../assets/tmp.png","../../assets/tmp.png","../../assets/tmp.png"]
   },
   onTap(event) {
     console.log(event)
     //跳转到下个页面，不关闭当前页面，可以返回上个页面
     wx.navigateTo({
-      url: '/pages/account/account',
+      url: '/pages/account/account?p=hello',
     })
   },
   onTap2(event) {
@@ -28,6 +34,12 @@ Page({
     wx.redirectTo({
       url: '/pages/account/account',
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -56,7 +68,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+    console.log('onUnload')
   },
 
   /**
@@ -77,6 +89,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+    return {
+      title: '首页',
+      path: '/pages/index/index',
+      imageUrl: '../../assets/tmp.png'
+    }
   }
 })

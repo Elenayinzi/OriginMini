@@ -26,6 +26,13 @@
         <image src="../../assets/tmp.png"/> 
       </swiper-item> 
     </swiper>
+    <view wx:for="{{lesson}}" wx:key="id">
+      <image src="{{item.image}}"></image>
+      <text>{{item.id}}</text>
+    </view>
+    <view wx:for="{{str}}" wx:key="*this" wx:for-item="s" wx:for-index="i">
+      <text>{{s}}{{i}}</text>
+    </view>
   </view>
   <view class="bottom" wx:if="{{!token}}">
     <view>
