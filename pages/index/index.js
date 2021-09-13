@@ -41,6 +41,27 @@ Page({
   onLoad: function (options) {
     
   },
+
+  getSwiper(){
+    wx.request({
+      url: 'url',
+      data: '',
+      header: {},
+      method:'GET',
+      dataType: 'json',
+      response: 'text',
+      success: (res) => {
+
+      },
+      fail: (res) => {
+
+      },
+      complete: (res) => {
+
+      },
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

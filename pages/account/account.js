@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
     /**
      * 页面的初始数据
@@ -15,7 +16,7 @@ Page({
     getIdInfo() {
       let _this = this
       wx.request({
-          url: 'https://sso.hzqykeji.com/bind',
+          url: app.baseUrl+'/bind',
           method: 'GET',
           header: {
             'content-type': 'application/json;charset=UTF-8',
@@ -52,7 +53,7 @@ Page({
       }
       let _this = this
       wx.request({
-          url: `https://sso.hzqykeji.com/captcha/${mobile}`,
+          url: app.baseUrl+`/captcha/${mobile}`,
           data: param,
           method: 'GET',
           header: {
@@ -107,9 +108,8 @@ Page({
         accessToken: openId,
         captcha: checkCode
       }
-      console.log(param)
       wx.request({
-        url: 'https://sso.hzqykeji.com/unbind/mobile',
+        url: app.baseUrl+'/unbind/mobile',
         data: param,
         method: 'POST',
         header: {
