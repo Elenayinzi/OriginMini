@@ -35,11 +35,29 @@ Page({
                 }
               })
             }else{
-
+              // wx.showToast({
+              //   title: '接口请求失败', //7个字长度
+              //   icon: 'none',
+              //   duration: 30000
+              // })
+              wx.showModal({
+                title: '错误信息',
+                content: '错误信息',
+                success(res){
+                  if(res.confirm){
+                    console.log('用户点击确认')
+                  }else if(res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              })
             }
           },
           fail(e){
-  
+            console.log(1)
+          },
+          complete(res){
+            console.log(2)
           }
       })
     },
