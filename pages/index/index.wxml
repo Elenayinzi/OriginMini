@@ -33,6 +33,7 @@
     <view wx:for="{{str}}" wx:key="*this" wx:for-item="s" wx:for-index="i">
       <text>{{s}}{{i}}</text>
     </view>
+    <view catchtap="onH5" data-url="https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html">跳转h5</view>
   </view>
   <view class="bottom" wx:if="{{!token}}">
     <view>

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/my/my",
     "pages/login/login",
-    "pages/account/account"
+    "pages/account/account",
+    "pages/webView/webView"
   ],
   "sitemapLocation": "sitemap.json",
   "window": {

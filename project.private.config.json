@@ -29,6 +29,11 @@
           "pathName": "pages/account/account",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "h5",
+          "pathName": "pages/webView/webView",
+          "scene": null
         }
       ]
     }

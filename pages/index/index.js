@@ -62,6 +62,13 @@ Page({
     })
   },
 
+  onH5(e){
+    const url = e.target.dataset.url
+    wx.navigateTo({
+      url: `/pages/webView/webView?url=${encodeURIComponent(url)}`,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
