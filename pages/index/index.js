@@ -19,7 +19,22 @@ Page({
         image:"../../assets/tmp.png"
       }
     ],
-    str:["../../assets/tmp.png","../../assets/tmp.png","../../assets/tmp.png"]
+    str:["../../assets/tmp.png","../../assets/tmp.png","../../assets/tmp.png"],
+    info: {
+      name:'elena'
+    },
+    user: {
+      name:'bob'
+    }
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+  onMyEvent(e) {
+    console.log(e)
   },
   onTap(event) {
     console.log(event)
@@ -35,13 +50,6 @@ Page({
       url: '/pages/account/account',
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
-  },
-
   getSwiper(){
     wx.request({
       url: 'url',
@@ -61,14 +69,40 @@ Page({
       },
     })
   },
-
+  //webview
   onH5(e){
     const url = e.target.dataset.url
     wx.navigateTo({
       url: `/pages/webView/webView?url=${encodeURIComponent(url)}`,
     })
   },
-
+  //获取收货地址
+  onChooseAddr() {
+    wx.chooseAddress({
+      success(res) {
+        console.log(res)
+      },
+    })
+  },
+  //获取地理位置
+  onChooseLocation() {
+    wx.chooseLocation({
+      success: (res) => {
+        console.log(res)
+      },
+    })
+  },
+  //获取实时位置并且打开地图
+  onGetLocation() {
+    wx.getLocation({
+      success(res) {
+        wx.openLocation({
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

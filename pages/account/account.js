@@ -1,4 +1,6 @@
 const app = getApp()
+import { HTTP } from '../../utils/http-promise'
+const http = new HTTP()
 Page({
     /**
      * 页面的初始数据
@@ -15,50 +17,18 @@ Page({
     //查询用户openid,unionid
     getIdInfo() {
       let _this = this
-      wx.request({
-          url: app.baseUrl+'/bind',
-          method: 'GET',
-          header: {
-            'content-type': 'application/json;charset=UTF-8',
-            'Authorization':'23dd69d17487bf8adf54b2fbbe9ed573',
-            'X-Request-Token': wx.getStorageSync('token')
-          },
-          success(res){
-            if(res.statusCode == 200){
-              let data = res.data
-              data.map(item=>{
-                if(item.type == 74){
-                    _this.setData({
-                      openId:item.accessToken,
-                      unionId:item.identifier
-                    })
-                }
+      http.request({
+        url:'/bind',
+        method: 'GET'
+      }).then((data) => {
+        data.map(item=>{
+          if(item.type == 74){
+              _this.setData({
+                openId:item.accessToken,
+                unionId:item.identifier
               })
-            }else{
-              // wx.showToast({
-              //   title: '接口请求失败', //7个字长度
-              //   icon: 'none',
-              //   duration: 30000
-              // })
-              wx.showModal({
-                title: '错误信息',
-                content: '错误信息',
-                success(res){
-                  if(res.confirm){
-                    console.log('用户点击确认')
-                  }else if(res.cancel) {
-                    console.log('用户点击取消')
-                  }
-                }
-              })
-            }
-          },
-          fail(e){
-            console.log(1)
-          },
-          complete(res){
-            console.log(2)
           }
+        })
       })
     },
     //获取验证码

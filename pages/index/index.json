@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "lesson-cmp":"../../components/lesson/lesson"
+  },
   "navigationBarTitleText": "首页"
 }

@@ -34,6 +34,10 @@
       <text>{{s}}{{i}}</text>
     </view>
     <view catchtap="onH5" data-url="https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html">跳转h5</view>
+    <view bindtap="onChooseAddr">获取收货地址</view>
+    <view bindtap="onChooseLocation">获取地理位置</view>
+    <view bindtap="onGetLocation">显示用户实时位置</view>
+    <lesson-cmp info="{{info}}" data-user="{{user}}" bind:myEvent="onMyEvent"></lesson-cmp>
   </view>
   <view class="bottom" wx:if="{{!token}}">
     <view>

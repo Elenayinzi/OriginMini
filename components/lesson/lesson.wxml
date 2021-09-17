@@ -1,0 +1,2 @@
+<!--components/lesson/lesson.wxml-->
+<text bindtap="onTap">hello {{user.name}}</text>
