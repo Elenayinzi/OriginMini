@@ -2,5 +2,6 @@
   "usingComponents": {
     "lesson-cmp":"../../components/lesson/lesson"
   },
-  "navigationBarTitleText": "首页"
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh": true
 }

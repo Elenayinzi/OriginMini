@@ -33,6 +33,7 @@ Page({
   onLoad: function (options) {
     
   },
+  //子组件传参数给父级页面
   onMyEvent(e) {
     console.log(e)
   },
