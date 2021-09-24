@@ -31,7 +31,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    // wx.setNavigationBarTitle({
+    //   title: '小程序111',
+    // })
+    // wx.makePhoneCall({
+    //   phoneNumber: 'phoneNumber',
+    // })
   },
   //子组件传参数给父级页面
   onMyEvent(e) {
