@@ -38,6 +38,10 @@
     <view bindtap="onChooseLocation">获取地理位置</view>
     <view bindtap="onGetLocation">显示用户实时位置</view>
     <lesson-cmp info="{{info}}" data-user="{{user}}" bind:myEvent="onMyEvent"></lesson-cmp>
+    <view class="box">
+      <view class="test1">aa</view>
+      <view class="test1">bb</view>
+    </view>
   </view>
   <view class="bottom" wx:if="{{!token}}">
     <view>

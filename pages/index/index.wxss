@@ -54,3 +54,12 @@ swiper{
 button::after{
     border: none;
 }
+.box{
+    display: flex;
+
+}
+.test1{
+    width: 50%;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
